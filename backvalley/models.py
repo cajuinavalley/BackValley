@@ -1,3 +1,46 @@
 from django.db import models
 
 # Create your models here.
+
+class Sector(models.Model):
+    name = models.CharField(max_length=100)
+
+class Role(models.Model):
+    name = models.CharField(max_length=100)
+
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    facebook = models.CharField(max_length=100)
+    instagram = models.CharField(max_length=100)
+    linkedin = models.CharField(max_length=100)
+
+    role = models.ManyToManyField(
+        Role,
+    )
+
+class Startup(models.Model):
+    logo = models.ImageField(default='')
+
+    employees = models.ManyToManyField(
+        Employee,
+    )
+
+    name = models.CharField(max_length=100, default='', blank=False)
+    site = models.CharField(max_length=100, default='', blank=True)
+    city = models.CharField(max_length=100, default='', blank=False)
+    address = models.TextField(default='', blank=True)
+    email = models.EmailField(default='', blank=False)
+    phone = models.CharField(max_length=100, default='', blank=True)
+
+    facebook = models.CharField(max_length=100, default='', blank=True)
+    instagram = models.CharField(max_length=100, default='', blank=True)
+    linkedin = models.CharField(max_length=100, default='', blank=True)
+
+    mission = models.TextField(default='', blank=True)
+    summary = models.TextField(default='', blank=True)
+
+    sector = models.ForeignKey(
+        Sector,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
