@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:slim
 
 LABEL Name=backvalley Version=0.0.1
 EXPOSE 3000
