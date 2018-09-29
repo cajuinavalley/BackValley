@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'backvalley.apps.BackvalleyConfig'
+    'backvalley.apps.BackvalleyConfig',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -133,3 +135,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# Google Maps API
+
+GOOGLE_MAPS_API_KEY = "AIzaSyAxSZoSlRQmNAKVJlwoL1S17-HC85Sl2EQ"
+
+# CORS
+
+CORS_ORIGIN_ALLOW_ALL = True
