@@ -29,6 +29,10 @@ class Startup(models.Model):
     site = models.CharField(max_length=100, default='', blank=True)
     city = models.CharField(max_length=100, default='', blank=False)
     address = models.TextField(default='', blank=True)
+
+    lat = models.FloatField(default=0.0, blank=False)
+    lon = models.FloatField(default=0.0, blank=False)
+
     email = models.EmailField(default='', blank=False)
     phone = models.CharField(max_length=100, default='', blank=True)
 

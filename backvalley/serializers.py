@@ -6,7 +6,7 @@ from .models import Startup, Employee, Sector, Role
 class StartupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Startup
-        fields = ('logo', 'employees', 'name', 'site', 'city', 'address', 'email', 'phone', 'facebook', 'instagram', 'linkedin', 'mission', 'summary', 'sector')
+        fields = ('logo', 'employees', 'name', 'site', 'city', 'address', 'email', 'phone', 'facebook', 'instagram', 'linkedin', 'mission', 'summary', 'sector', 'lat', 'lon')
 
 
 class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
