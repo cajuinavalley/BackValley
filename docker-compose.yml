@@ -9,8 +9,9 @@ services:
   backvalley:
     restart: always
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
-    image: backvalley
+    entrypoint: /app/docker-entrypoint.sh
+    # command: python3 manage.py runserver 0.0.0.0:8000
+    image: ramonmelo/backvalley
     volumes:
       - .:/app
     ports:
