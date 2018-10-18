@@ -3,7 +3,7 @@ from .models import Startup, Sector, Role, Employee
 
 
 class StartupAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email')
+    list_display = ('name', 'email', 'sector')
 
 class SectorAdmin(admin.ModelAdmin):
     list_display = ('name',)
